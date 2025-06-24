@@ -4,8 +4,11 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.tafersgestao.FakeNavController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -31,18 +34,16 @@ fun CheckListEPIFuncionarioScreen(navController: NavController, data: String) {
                     Column(modifier = Modifier.padding(16.dp)) {
                         Text(text = funcionario, style = MaterialTheme.typography.titleMedium)
                         Spacer(modifier = Modifier.height(8.dp))
-                        epis.forEach { epi ->
-                            Row(
-                                verticalAlignment = androidx.compose.ui.Alignment.CenterVertically,
-                                modifier = Modifier.padding(vertical = 4.dp)
-                            ) {
-                                Checkbox(checked = false, onCheckedChange = {})
-                                Text(text = epi)
-                            }
-                        }
+
                     }
                 }
             }
         }
     }
+}
+
+@Composable
+@Preview
+fun PreviewChecklistFuncionarios(){
+    CheckListEPIFuncionarioScreen(FakeNavController(LocalContext.current), data = "23-06-2025")
 }

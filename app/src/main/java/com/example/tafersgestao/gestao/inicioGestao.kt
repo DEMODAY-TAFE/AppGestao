@@ -21,7 +21,7 @@ fun InicioGestaoScreen(navController: NavController) {
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Button(
-                onClick = { navController.navigate("checklist_epi") },
+                onClick = { navController.navigate("checklist_epi_funcionario/João/23-06-2025") },
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text("Checklist EPI")
@@ -30,3 +30,4 @@ fun InicioGestaoScreen(navController: NavController) {
         }
     }
 }
+
