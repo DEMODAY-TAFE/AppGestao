@@ -1,17 +1,32 @@
 package com.example.tafers.telas.gestao
 
 
-import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.selection.toggleable
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Checkbox
+import androidx.compose.material3.CheckboxDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -50,7 +65,8 @@ fun ChecklistEPIFuncionarioDetalheScreen(
         "Óculos de proteção"
     )
 
-    val checkedStates = remember { mutableStateListOf(*Array(epis.size) { false }) } //variavel que guarda valor falso da checkbox
+    val checkedStates =
+        remember { mutableStateListOf(*Array(epis.size) { false }) } //variavel que guarda valor falso da checkbox
 
     val selectAll = remember { mutableStateOf(false) } //variavel para selecionar todas as opções
 
@@ -88,7 +104,8 @@ fun ChecklistEPIFuncionarioDetalheScreen(
                     text = "Funcionário: $funcionario   ",
                     fontFamily = poppinsRegular,
                     fontSize = 18.sp,
-                    style = MaterialTheme.typography.titleMedium)
+                    style = MaterialTheme.typography.titleMedium
+                )
 
 
 
@@ -96,7 +113,8 @@ fun ChecklistEPIFuncionarioDetalheScreen(
                     text = "|    Data: $data",
                     fontFamily = poppinsRegular,
                     fontSize = 18.sp,
-                    style = MaterialTheme.typography.titleMedium)
+                    style = MaterialTheme.typography.titleMedium
+                )
             }
 
             Row(
@@ -106,7 +124,8 @@ fun ChecklistEPIFuncionarioDetalheScreen(
                     text = "EPIs",
                     fontFamily = poppinsBold,
                     fontSize = 35.sp,
-                    style = MaterialTheme.typography.titleLarge)
+                    style = MaterialTheme.typography.titleLarge
+                )
 
                 Spacer(modifier = Modifier.weight(1f))
 
@@ -114,7 +133,8 @@ fun ChecklistEPIFuncionarioDetalheScreen(
                     text = "Selecionar Tudo",
                     fontFamily = poppinsRegular,
                     fontSize = 18.sp,
-                    style = MaterialTheme.typography.titleMedium)
+                    style = MaterialTheme.typography.titleMedium
+                )
                 Checkbox(
                     checked = selectAll.value,
                     onCheckedChange = { isChecked ->
@@ -141,7 +161,8 @@ fun ChecklistEPIFuncionarioDetalheScreen(
                         text = epi,
                         fontFamily = poppinsRegular,
                         fontSize = 23.sp,
-                        style = MaterialTheme.typography.titleMedium)
+                        style = MaterialTheme.typography.titleMedium
+                    )
 
                     Spacer(modifier = Modifier.weight(1f))
 
@@ -179,6 +200,10 @@ fun ChecklistEPIFuncionarioDetalheScreen(
 
 @Composable
 @Preview
-fun PreviewChecklist(){
-    ChecklistEPIFuncionarioDetalheScreen(FakeNavController(LocalContext.current), "João", data = "23-06-2025")
+fun PreviewChecklist() {
+    ChecklistEPIFuncionarioDetalheScreen(
+        FakeNavController(LocalContext.current),
+        "João",
+        data = "23-06-2025"
+    )
 }
