@@ -2,6 +2,7 @@ package com.example.tafers.telas.gestao
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.FlowRowScopeInstance.weight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -26,21 +27,16 @@ fun BottomNavItem(
     isSelect: Boolean,
     onClick: () -> Unit
 ) {
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier
-            .clip(RoundedCornerShape(12.dp))
-            .padding(8.dp)
+    IconButton(
+        onClick = onClick,
+        modifier = Modifier.size(50.dp)
     ) {
-        IconButton(onClick = onClick) {
-            Icon(
-                modifier = Modifier
-                    .size(30.dp),
-                painter = painterResource(id = icon),
-                contentDescription = null,
-                tint = if (isSelect) Color(0xFF003366) else Color(0xFFFC6600)
-            )
-        }
+        Icon(
+            modifier = Modifier.size(30.dp),
+            painter = painterResource(id = icon),
+            contentDescription = null,
+            tint = if (isSelect) Color(0xFF003366) else Color(0xFFFC6600)
+        )
     }
 }
 
@@ -59,39 +55,45 @@ fun InicioGestaoScreen(navController: NavController) {
             BottomAppBar(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 50.dp, vertical = 40.dp)
-                    .clip(RoundedCornerShape(50.dp))
+                    .padding(horizontal = 60.dp, vertical = 40.dp)
                     .height(70.dp)
-                    .shadow(12.dp, RoundedCornerShape(50.dp)),
-                containerColor = Color(0xFFFFFFFF)
+                    .shadow(15.dp, RoundedCornerShape(50.dp)),
+                containerColor = Color.White
 
             ){
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceEvenly
-                ){
-                    BottomNavItem(
-                        icon = R.drawable.home_icon,
-                        isSelect = true,
-                        onClick = { }
-                    )
-                    BottomNavItem(
-                        icon = R.drawable.clipboard_icon,
-                        isSelect = false,
-                        onClick = { }
-                    )
-                    BottomNavItem(
-                        icon = R.drawable.marktplace_icon,
-                        isSelect = false,
-                        onClick = { }
-                    )
-                    BottomNavItem(
-                        icon = R.drawable.profile_icon,
-                        isSelect = false,
-                        onClick = { }
-                    )
+                Box(
+                    modifier = Modifier.fillMaxWidth(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .weight(50.dp),
+
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceEvenly
+                    ) {
+                        BottomNavItem(
+                            icon = R.drawable.home_icon,
+                            isSelect = true,
+                            onClick = { }
+                        )
+                        BottomNavItem(
+                            icon = R.drawable.clipboard_icon,
+                            isSelect = false,
+                            onClick = { }
+                        )
+                        BottomNavItem(
+                            icon = R.drawable.marktplace_icon,
+                            isSelect = false,
+                            onClick = { }
+                        )
+                        BottomNavItem(
+                            icon = R.drawable.profile_icon,
+                            isSelect = false,
+                            onClick = { }
+                        )
+                    }
                 }
             }
         }
