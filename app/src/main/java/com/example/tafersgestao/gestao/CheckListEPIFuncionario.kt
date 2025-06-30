@@ -1,5 +1,6 @@
 package com.example.tafers.telas.gestao
 
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -70,14 +71,27 @@ fun CheckListEPIFuncionarioScreen(navController: NavController, data: String) {
         ) {
             funcionarios.forEachIndexed { index, funcionario ->
                 Card(
-                    modifier = Modifier.fillMaxWidth(),
+                    shape = MaterialTheme.shapes.medium,
+                    modifier = Modifier
+                        .width(500.dp)
+                        .height(90.dp)
+                        .border(
+                            width = 1.dp,
+                            color = Color.Black,
+                            shape = MaterialTheme.shapes.medium
+                        )
+                        .fillMaxWidth(),
                     onClick = { navController.navigate(routes[index]) }
-
                 ) {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Text(text = funcionario, style = MaterialTheme.typography.titleMedium)
+                    Column(
+                        modifier = Modifier.padding(10.dp)
+                    ) {
+                        
+                        Text(
+                            text = funcionario,
+                            style = MaterialTheme.typography.titleMedium
+                        )
                         Spacer(modifier = Modifier.height(8.dp))
-
                     }
                 }
             }
