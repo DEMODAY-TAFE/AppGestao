@@ -20,6 +20,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.tafersgestao.R
+import com.example.tafersgestao.ui.theme.AzulEscuro
+import com.example.tafersgestao.ui.theme.Laranja
 
 
 @Composable
@@ -78,9 +80,9 @@ fun CustomBottomBar(
                             contentDescription = null,
                             modifier = Modifier.size(32.dp),
                             tint = if (index == selectedIndex)
-                                Color(0xFF003366)
+                                AzulEscuro
                             else
-                                Color(0xFFFC6600)
+                                Laranja
                         )
                     }
                 }

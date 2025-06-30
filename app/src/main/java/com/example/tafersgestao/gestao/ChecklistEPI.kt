@@ -98,8 +98,6 @@ fun ChecklistEPIFuncionarioDetalheScreen(
                 )
             }
 
-
-
             Row {
                 Text(
                     text = "Funcionário: $funcionario   ",
@@ -108,10 +106,8 @@ fun ChecklistEPIFuncionarioDetalheScreen(
                     style = MaterialTheme.typography.titleMedium
                 )
 
-
-
                 Text(
-                    text = "|    Data: $data",
+                    text = "|  Data: $data",
                     fontFamily = poppinsRegular,
                     fontSize = 18.sp,
                     style = MaterialTheme.typography.titleMedium

@@ -9,11 +9,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -28,10 +30,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.tafersgestao.FakeNavController
 import com.example.tafersgestao.R
 import com.example.tafersgestao.gestao.CustomBottomBar
+import com.example.tafersgestao.ui.theme.AzulEscuro
+import com.example.tafersgestao.ui.theme.Laranja
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -44,7 +49,28 @@ fun InicioGestaoScreen(navController: NavController) {
         topBar = {
             TopAppBar(
                 title = {
-                    Text("Gestão - Início")
+
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .wrapContentHeight()
+                    ) {
+                        Text(
+                            text = "Gestão",
+                            fontFamily = poppinsBold,
+                            fontSize = 38.sp,
+                            style = MaterialTheme.typography.headlineMedium
+                        )
+                        Text(
+                            text = " Inicio",
+                            fontFamily = poppinsRegular,
+                            fontSize = 38.sp,
+                            style = MaterialTheme.typography.headlineMedium.copy(
+                                color = AzulEscuro
+                            )
+                        )
+                    }
+
                 }
             )
         },
