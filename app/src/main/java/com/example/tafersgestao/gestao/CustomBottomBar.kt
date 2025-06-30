@@ -23,7 +23,6 @@ import com.example.tafersgestao.R
 import com.example.tafersgestao.ui.theme.AzulEscuro
 import com.example.tafersgestao.ui.theme.Laranja
 
-
 @Composable
 fun CustomBottomBar(
     selectedIndex: Int,
@@ -74,9 +73,9 @@ fun CustomBottomBar(
                             navController.navigate(routes[index])
                         },
                         modifier = Modifier.size(50.dp)
-                    ){
+                    ) {
                         Icon(
-                            painter = painterResource( id=icon ),
+                            painter = painterResource(id = icon),
                             contentDescription = null,
                             modifier = Modifier.size(32.dp),
                             tint = if (index == selectedIndex)

@@ -3,8 +3,8 @@ package com.example.tafersgestao
 import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
-import androidx.navigation.compose.NavHost
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.tafers.telas.gestao.CheckListEPIFuncionarioScreen
@@ -19,14 +19,13 @@ fun Navigate(navController: NavHostController = rememberNavController()) {
     NavHost(
         navController = navController,
         startDestination = "inicio_gestao" //inicia pela tela "Inicio Gestão"
-    ){
+    ) {
 
         composable("inicio_gestao") {
             InicioGestaoScreen(navController = navController)
         }
 
-        composable("checklist_epi_funcionario/{funcionario}/{data}") {
-            backStackEntry -> //caixa que guarda dados a cada tela nova enviada quando clicar o botão
+        composable("checklist_epi_funcionario/{funcionario}/{data}") { backStackEntry -> //caixa que guarda dados a cada tela nova enviada quando clicar o botão
             val funcionario = backStackEntry.arguments?.getString("funcionario") ?: ""
             val data = backStackEntry.arguments?.getString("data") ?: ""
             ChecklistEPIFuncionarioDetalheScreen(
@@ -36,8 +35,7 @@ fun Navigate(navController: NavHostController = rememberNavController()) {
             )
         }
 
-        composable("checklist_epi/{data}") {
-            backStackEntry ->
+        composable("checklist_epi/{data}") { backStackEntry ->
             val data = backStackEntry.arguments?.getString("data") ?: ""
             CheckListEPIFuncionarioScreen(
                 navController = navController,
