@@ -14,7 +14,11 @@ import com.example.tafers.telas.gestao.InicioGestaoScreen
 class FakeNavController(context: Context) : NavController(context) //classe para rodar nos preview
 
 @Composable
-fun Navigate(navController: NavHostController = rememberNavController()) {
+fun Navigate(
+    selectedIndex: Int,
+    onItemSelect: (Int) -> Unit,
+    navController: NavHostController = rememberNavController()
+) {
 
     NavHost(
         navController = navController,
@@ -22,7 +26,11 @@ fun Navigate(navController: NavHostController = rememberNavController()) {
     ) {
 
         composable("inicio_gestao") {
-            InicioGestaoScreen(navController = navController)
+            InicioGestaoScreen(
+                navController = navController,
+                selectedIndex = selectedIndex,
+                onItemSelect = onItemSelect
+            )
         }
 
         composable("checklist_epi_funcionario/{funcionario}/{data}") { backStackEntry -> //caixa que guarda dados a cada tela nova enviada quando clicar o botão
@@ -39,7 +47,9 @@ fun Navigate(navController: NavHostController = rememberNavController()) {
             val data = backStackEntry.arguments?.getString("data") ?: ""
             CheckListEPIFuncionarioScreen(
                 navController = navController,
-                data = data
+                data = data,
+                selectedIndex = selectedIndex,
+                onItemSelect = onItemSelect
             )
         }
 

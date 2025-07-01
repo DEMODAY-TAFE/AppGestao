@@ -28,9 +28,11 @@ import com.example.tafersgestao.ui.theme.AzulEscuro
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun InicioGestaoScreen(navController: NavController) {
-
-    val selectedItem = remember { mutableStateOf(0) }
+fun InicioGestaoScreen(
+    navController: NavController,
+    selectedIndex: Int,
+    onItemSelect: (Int) -> Unit
+) {
 
     Scaffold(
         topBar = {
@@ -63,8 +65,8 @@ fun InicioGestaoScreen(navController: NavController) {
         },
         bottomBar = {
             CustomBottomBar(
-                selectedIndex = selectedItem.value,
-                onItemSelect = { selectedItem.value = it },
+                selectedIndex = selectedIndex,
+                onItemSelect = onItemSelect,
                 navController = navController
             )
         }
@@ -86,6 +88,10 @@ fun InicioGestaoScreen(navController: NavController) {
 @Preview
 fun PreviewInicioGestao() {
 
-    InicioGestaoScreen(FakeNavController(LocalContext.current))
+    InicioGestaoScreen(
+        FakeNavController(LocalContext.current),
+        selectedIndex = 0,
+        onItemSelect = { }
+    )
 
 }

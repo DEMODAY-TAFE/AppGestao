@@ -33,7 +33,12 @@ import com.example.tafersgestao.ui.theme.AzulEscuro
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CheckListEPIFuncionarioScreen(navController: NavController, data: String) {
+fun CheckListEPIFuncionarioScreen(
+    navController: NavController,
+    data: String,
+    selectedIndex: Int,
+    onItemSelect: (Int) -> Unit
+) {
     // Exemplo de funcionários e EPIs
     val routes = listOf(
         "checklist_epi_funcionario/João/$data",
@@ -54,13 +59,13 @@ fun CheckListEPIFuncionarioScreen(navController: NavController, data: String) {
                         Text(
                             text = "Checklist",
                             fontFamily = poppinsBold,
-                            fontSize = 38.sp,
+                            fontSize = 30.sp,
                             style = MaterialTheme.typography.headlineMedium
                         )
                         Text(
                             text = " Funcionarios",
                             fontFamily = poppinsRegular,
-                            fontSize = 30.sp,
+                            fontSize = 28.sp,
                             style = MaterialTheme.typography.headlineMedium.copy(
                                 color = AzulEscuro
                             )
@@ -71,8 +76,8 @@ fun CheckListEPIFuncionarioScreen(navController: NavController, data: String) {
         },
         bottomBar = {
             CustomBottomBar(
-                selectedIndex = selectedItem.value,
-                onItemSelect = { selectedItem.value = it },
+                selectedIndex = selectedIndex,
+                onItemSelect = onItemSelect,
                 navController = navController
             )
         }
@@ -101,7 +106,6 @@ fun CheckListEPIFuncionarioScreen(navController: NavController, data: String) {
                     Column(
                         modifier = Modifier.padding(10.dp)
                     ) {
-
                         Text(
                             text = funcionario,
                             style = MaterialTheme.typography.titleMedium
@@ -117,5 +121,10 @@ fun CheckListEPIFuncionarioScreen(navController: NavController, data: String) {
 @Composable
 @Preview
 fun PreviewChecklistFuncionarios() {
-    CheckListEPIFuncionarioScreen(FakeNavController(LocalContext.current), data = "23-06-2025")
+    CheckListEPIFuncionarioScreen(
+        FakeNavController(LocalContext.current),
+        data = "23-06-2025",
+        selectedIndex = 0,
+        onItemSelect = { }
+        )
 }
