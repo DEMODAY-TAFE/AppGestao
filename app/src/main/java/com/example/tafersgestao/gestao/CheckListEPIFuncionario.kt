@@ -30,14 +30,15 @@ import androidx.navigation.NavController
 import com.example.tafersgestao.FakeNavController
 import com.example.tafersgestao.gestao.CustomBottomBar
 import com.example.tafersgestao.ui.theme.AzulEscuro
+import com.example.tafersgestao.ui.theme.poppinsRegular
+import com.example.tafersgestao.ui.theme.poppinsLight
+import com.example.tafersgestao.ui.theme.poppinsBold
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CheckListEPIFuncionarioScreen(
     navController: NavController,
-    data: String,
-    selectedIndex: Int,
-    onItemSelect: (Int) -> Unit
+    data: String
 ) {
     // Exemplo de funcionários e EPIs
     val routes = listOf(
@@ -72,13 +73,6 @@ fun CheckListEPIFuncionarioScreen(
                         )
                     }
                 }
-            )
-        },
-        bottomBar = {
-            CustomBottomBar(
-                selectedIndex = selectedIndex,
-                onItemSelect = onItemSelect,
-                navController = navController
             )
         }
     ) { padding ->
@@ -123,8 +117,6 @@ fun CheckListEPIFuncionarioScreen(
 fun PreviewChecklistFuncionarios() {
     CheckListEPIFuncionarioScreen(
         FakeNavController(LocalContext.current),
-        data = "23-06-2025",
-        selectedIndex = 0,
-        onItemSelect = { }
+        data = "23-06-2025"
         )
 }

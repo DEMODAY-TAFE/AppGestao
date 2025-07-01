@@ -22,6 +22,9 @@ import androidx.navigation.NavController
 import com.example.tafersgestao.R
 import com.example.tafersgestao.ui.theme.AzulEscuro
 import com.example.tafersgestao.ui.theme.Laranja
+import com.example.tafersgestao.ui.theme.poppinsRegular
+import com.example.tafersgestao.ui.theme.poppinsLight
+import com.example.tafersgestao.ui.theme.poppinsBold
 
 @Composable
 fun CustomBottomBar(

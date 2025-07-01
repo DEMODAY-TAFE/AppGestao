@@ -24,14 +24,15 @@ import androidx.navigation.NavController
 import com.example.tafersgestao.FakeNavController
 import com.example.tafersgestao.gestao.CustomBottomBar
 import com.example.tafersgestao.ui.theme.AzulEscuro
+import com.example.tafersgestao.ui.theme.poppinsRegular
+import com.example.tafersgestao.ui.theme.poppinsLight
+import com.example.tafersgestao.ui.theme.poppinsBold
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun InicioGestaoScreen(
-    navController: NavController,
-    selectedIndex: Int,
-    onItemSelect: (Int) -> Unit
+    navController: NavController
 ) {
 
     Scaffold(
@@ -62,13 +63,6 @@ fun InicioGestaoScreen(
 
                 }
             )
-        },
-        bottomBar = {
-            CustomBottomBar(
-                selectedIndex = selectedIndex,
-                onItemSelect = onItemSelect,
-                navController = navController
-            )
         }
     ) { padding ->
         Column(
@@ -89,9 +83,6 @@ fun InicioGestaoScreen(
 fun PreviewInicioGestao() {
 
     InicioGestaoScreen(
-        FakeNavController(LocalContext.current),
-        selectedIndex = 0,
-        onItemSelect = { }
-    )
+        FakeNavController(LocalContext.current))
 
 }

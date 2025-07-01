@@ -23,11 +23,7 @@ class MainActivity : ComponentActivity() {
                 val selectedItem = rememberSaveable { mutableStateOf(0) }
 
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Navigate(
-                        selectedIndex = selectedItem.value,
-                        onItemSelect = { index -> selectedItem.value = index },
-                        navController = navController,
-                    )
+                    Navigate()
                 }
             }
         }

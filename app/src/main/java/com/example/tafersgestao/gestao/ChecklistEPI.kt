@@ -36,18 +36,11 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.tafersgestao.FakeNavController
 import com.example.tafersgestao.R
+import com.example.tafersgestao.ui.theme.poppinsRegular
+import com.example.tafersgestao.ui.theme.poppinsLight
+import com.example.tafersgestao.ui.theme.poppinsBold
 
-val poppinsLight = FontFamily(
-    Font(R.font.poppins_light),
-)
 
-val poppinsBold = FontFamily(
-    Font(R.font.poppins_bold)
-)
-
-val poppinsRegular = FontFamily(
-    Font(R.font.poppins_regular)
-)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
