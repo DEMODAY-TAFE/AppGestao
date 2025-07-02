@@ -31,10 +31,7 @@ import com.example.tafersgestao.ui.theme.poppinsBold
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun InicioGestaoScreen(
-    navController: NavController
-) {
-
+fun InicioGestaoScreen(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(

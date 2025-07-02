@@ -44,6 +44,10 @@ import com.example.tafersgestao.ui.theme.poppinsRegular
 import com.example.tafersgestao.ui.theme.poppinsLight
 import com.example.tafersgestao.ui.theme.poppinsBold
 
+val funcionarios = listOf("João", "Maria", "Carlos")
+
+val fotos = listOf(R.drawable.joao, R.drawable.maria, R.drawable.carlos)
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CheckListEPIFuncionarioScreen(
@@ -56,10 +60,6 @@ fun CheckListEPIFuncionarioScreen(
         "checklist_epi_funcionario/Maria/$data",
         "checklist_epi_funcionario/Carlos/$data",
     )
-
-    val funcionarios = listOf("João", "Maria", "Carlos")
-
-    val fotos = listOf(R.drawable.joao, R.drawable.maria, R.drawable.carlos)
 
     val selectedItem = remember { mutableStateOf(0) }
 
