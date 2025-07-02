@@ -100,7 +100,7 @@ fun CheckListEPIFuncionarioScreen(
                 Card(
                     shape = MaterialTheme.shapes.medium,
                     modifier = Modifier
-                        .padding(horizontal = 40.dp)
+                        .padding(horizontal = 40.dp, vertical = 10.dp)
                         .width(350.dp)
                         .height(90.dp)
                         .fillMaxWidth(),
@@ -125,7 +125,8 @@ fun CheckListEPIFuncionarioScreen(
                         }
                         Text(
                             text = "    $funcionario",
-                            style = MaterialTheme.typography.titleMedium
+                            style = MaterialTheme.typography.titleMedium,
+                            fontSize = 20.sp
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                     }
