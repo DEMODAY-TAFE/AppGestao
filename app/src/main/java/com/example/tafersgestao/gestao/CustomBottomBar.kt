@@ -60,7 +60,7 @@ fun CustomBottomBar(
                 .height(70.dp),
             shape = RoundedCornerShape(50.dp),
             color = Color.White,
-            shadowElevation = 10.dp
+            shadowElevation = 15.dp
         ) {
             Row(
                 modifier = Modifier
