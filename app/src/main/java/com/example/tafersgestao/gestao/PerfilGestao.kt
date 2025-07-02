@@ -83,10 +83,9 @@ fun PerfilGestao(
                 modifier = Modifier.size(100.dp)
             ) {
                 Image(
-                    painter = painterResource(R.drawable.ic_launcher_foreground),
+                    painter = painterResource(R.drawable.isabel),
                     contentDescription = "foto de perfil",
                     modifier = Modifier
-                        .background(Color.LightGray, CircleShape)
                         .size(100.dp)
                         .clip(CircleShape)
                         .border(2.dp, Color.Black, CircleShape)

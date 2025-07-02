@@ -90,6 +90,8 @@ fun ChecklistEPIFuncionarioDetalheScreen(
                 )
             }
 
+            Spacer(modifier = Modifier.height(5.dp))
+
             Row {
                 Text(
                     text = "Funcionário: $funcionario   ",
@@ -105,6 +107,8 @@ fun ChecklistEPIFuncionarioDetalheScreen(
                     style = MaterialTheme.typography.titleMedium
                 )
             }
+
+            Spacer(modifier = Modifier.height(5.dp))
 
             Row(
                 verticalAlignment = Alignment.CenterVertically
@@ -165,6 +169,8 @@ fun ChecklistEPIFuncionarioDetalheScreen(
                     )
                 }
             }
+
+            Spacer(modifier = Modifier.height(10.dp))
 
             Row(
                 modifier = Modifier.fillMaxWidth(),
