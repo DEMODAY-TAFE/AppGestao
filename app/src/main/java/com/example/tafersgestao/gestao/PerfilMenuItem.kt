@@ -1,6 +1,6 @@
 package com.example.tafersgestao.gestao
 
-import android.R.attr.icon
+
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
