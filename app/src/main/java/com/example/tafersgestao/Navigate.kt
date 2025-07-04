@@ -15,6 +15,7 @@ import com.example.tafers.telas.gestao.CheckListEPIFuncionarioScreen
 import com.example.tafers.telas.gestao.ChecklistEPIFuncionarioDetalheScreen
 import com.example.tafers.telas.gestao.InicioGestaoScreen
 import com.example.tafers.telas.gestao.PerfilGestao
+import com.example.tafersgestao.gestao.ChecklistConcluidaScreen
 import com.example.tafersgestao.gestao.CustomBottomBar
 
 class FakeNavController(context: Context) : NavController(context) //classe para rodar nos preview
@@ -88,6 +89,15 @@ fun Navigate() {
             composable("perfil") {
                 PerfilGestao(
                     navController = navController,
+                )
+            }
+
+            composable("concluidoChecklist"){
+                ChecklistConcluidaScreen(
+                    onConcluirClick = {
+                        navController.navigate("checklist_epi/04-07-2025")
+                    }
+
                 )
             }
 

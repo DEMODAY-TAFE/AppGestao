@@ -141,6 +141,6 @@ fun CheckListEPIFuncionarioScreen(
 fun PreviewChecklistFuncionarios() {
     CheckListEPIFuncionarioScreen(
         FakeNavController(LocalContext.current),
-        data = "23-06-2025"
+        data = "04-07-2025"
         )
 }

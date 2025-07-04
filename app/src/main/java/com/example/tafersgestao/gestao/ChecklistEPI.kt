@@ -177,7 +177,7 @@ fun ChecklistEPIFuncionarioDetalheScreen(
                 horizontalArrangement = Arrangement.End
             ) {
                 Button(
-                    onClick = { /* Salvar checklist ou voltar */ },
+                    onClick = { navController.navigate("concluidoChecklist") },
                     modifier = Modifier
                         .width(120.dp)
                         .height(55.dp),
@@ -199,6 +199,6 @@ fun PreviewChecklist() {
     ChecklistEPIFuncionarioDetalheScreen(
         FakeNavController(LocalContext.current),
         "João",
-        data = "23-06-2025"
+        data = "04-07-2025"
     )
 }
